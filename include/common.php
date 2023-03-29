@@ -1,7 +1,18 @@
 <?php
 
 include("config.php");
-
+session_start();
+function check_login() {
+	if(!is_logged()){
+        //chưa đăng nhập
+        js_alert("Bạn cần đăng nhập");
+        js_redirect_to("index3.php");
+    }
+}
+function is_logged() {
+	//return true; nếu đã đăng nhập (có thông tin session username)
+	return isset($_SESSION["username"]) && !empty($_SESSION["username"]);
+}
 /*
  * Hiển thị alert
  */

@@ -10,7 +10,7 @@
 
         if(empty($data)){
             //quay về trang chủ ko có dữ liệu
-            redirect_to("/indexstudents.php");
+            redirect_to("/admin/student");
         }
         $data = $data[0];
         
@@ -22,10 +22,10 @@
         $diachi =  $_POST["address"];
         $idlop =  $_POST["class_id"];
         
-        $filename = upload_and_return_filename("img_path");
+        $filename = upload_and_return_filename("img_path","student/img");
         $sql = "update students set fullname = ?, dob = ?, genden = ?, address = ?, class_id = ?, img_path = ? where id = ?";
 
-        $params = [$fullname, $ngaysinh, $gioitinh, $diachi, $idlop, $img_path, $id];
+        $params = [$fullname, $ngaysinh, $gioitinh, $diachi, $idlop, $filename, $id];
         db_execute($sql, $params);
     
         redirect_to("/indexstudents.php");
@@ -35,7 +35,7 @@
     include("../_header.php");
 ?>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <label for="">Cập nhật họ tên</label> 
         <input type="text" name="fullname" required value="<?php echo $data["fullname"]?>"> <br>
         <label for="">Cập nhật ngày sinh</label> 
@@ -59,7 +59,11 @@
             ?>
         </select> <br>
         <label for="">Cập nhật hình</label>
-        <input type="file" name="img_path" accept=".png, .jpg, .jpeg"> <br> <hr>
+        <?php if(!empty($data["img_path"])) { ?>
+            <img src="<?php upload($data["img_path"]); ?>" width="100"/>
+            <br>
+        <?php }?>
+        <input type="file" name="img_path" accept=".png, .ipg, .jpeg"> <br> <hr>
 
         <input type="submit" name="capnhat" value="Cập nhật">
     </form>

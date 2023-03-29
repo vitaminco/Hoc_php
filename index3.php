@@ -18,6 +18,12 @@
 	<div class="container">
 		<div class="mb-3">
 			<a href="./admin/class/create.php" class="btn btn-a">Thêm mới lớp</a>
+			<?php if(is_logged()) { ?>
+				<a href="./logout.php" class="btn btn-a">TRANG ĐĂNG XUẤT</a>
+			<?php } else {?>
+				<a href="register.php" class="btn btn-a">TRANG ĐĂNG KÝ</a>
+				<a href="login.php" class="btn btn-a">TRANG ĐĂNG NHẬP</a>
+			<?php }?>
 		</div>
 
 		<table>
