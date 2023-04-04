@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    background-color: rgba(147, 250, 29, 0.5);
+}
+.container{
+    max-width: 1200px;
+    margin: 30px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+td, th{
+    border: 1px solid gray;
+    padding: 5px;
+}
+thead{
+    background-color: gray;
+}
+.btn{
+    padding: 5px 10px;
+    border: 1px solid grey;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: rgb(212, 212, 212);
+    color: dimgray;
+    text-decoration: none;
+}
+
+.btn.btn-a{
+    background-color: violet;
+    color: black;
+}
+.btn.btn-b{
+    background-color: orange;
+    color: black;
+}
+.btn.btn-c{
+    background-color: yellow;
+    color: black;
+}
+.mb-3{
+    margin-bottom: 15px;
+}
+
+/*  */
+.KHUNG{
+    border: 5px solid brown;
+    background-color: azure;
+}
+.THE{
+    font-size: 30px;
+    margin: 10px 0 ;
+}
+.THE input{
+    border-color: white;
+    font-size: 1.2rem;
+    background-color:bisque;
+    padding: 10px 50px;
+    margin: 0 30px;
+}
+.dk input{
+    border-color: white;
+    background-color: violet;
+    font-size: 30px;
+}
